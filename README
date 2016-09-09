@@ -1,0 +1,58 @@
+About:
+------
+Anonymize the ip on your ip on ubuntu 16.04 with Python3.
+Uses selienium to drive your browser and confirm your IP has changed.
+Developed on ubuntu 16.04. Uses tor, privoxy, Python 3.?, requests, stem, require.
+
+Required Bash commands:
+-----------------------
+Install Tor.
+$ sudo apt-get update
+$ sudo apt-get install tor
+
+Restart Tor.
+$ sudo /etc/init.d/tor restart
+
+Generate a hash
+$ tor --hash-password mypassword
+
+Edit torrc file:
+$ sudo nano /etc/tor/torrc
+## uncomment these items and modify hash
+ControlPort 9051
+CookieAuthentication 1
+HashedControlPassword 16:872860B76453A77D60CA2BB8C1A7042072093276A3D701AD684053EC4C
+
+Restart
+$ sudo /etc/init.d/tor restart
+
+Install privoxy router
+$ sudo apt-get install privoxy
+
+Edit privoxy config
+$ sudo nano /etc/privoxy/config
+forward-socks5 / localhost:9050 .
+
+$ /etc/init.d/privoxy restart
+
+$ sudo netstat -tulpan | grep "8118"
+$ sudo netstat -tulpan | grep "9050"
+$ sudo netstat -tulpan | grep "9051"
+
+privoxy listens on 8118 and forwards to tor at 9050.
+Tor also operates the control channel at 9051.
+
+Set your browser to forward to 127.0.0.1:8118 for Tor browsing.
+
+Running the application will launch selenium webdriver, and open a browser window to show your ip.
+Inside of the application all network is sent through Tor. Your IP will rotate ten times.
+
+Links:
+--------------------
+https://check.torproject.org/
+http://sacharya.com/crawling-anonymously-with-tor-in-python/
+https://www.ipify.org/
+https://stem.torproject.org/tutorials/the_little_relay_that_could.html
+https://www.privoxy.org/user-manual/quickstart.html
+http://en.linuxreviews.org/HOWTO_use_the_Internet_anonymously_using_Tor_and_Privoxy
+http://docs.seleniumhq.org/docs/04_webdriver_advanced.jsp#using-a-proxy
