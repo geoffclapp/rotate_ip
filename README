@@ -2,18 +2,18 @@ About:
 ------
 Anonymize and rotate IP on on Ubuntu 16.04 with Python3.
 Uses selienium to drive your browser and confirm your IP has changed.
-Developed on ubuntu 16.04. Uses tor, privoxy, Python 3.?, requests, stem, require.
+Developed on ubuntu 16.04 by Geoffrey Clapp. Uses tor, privoxy, Python 3.?, requests, stem, require.
 
 Required Bash commands:
 -----------------------
-Install Tor.
+Install Tor:
 $ sudo apt-get update
 $ sudo apt-get install tor
 
-Restart Tor.
+Restart Tor:
 $ sudo /etc/init.d/tor restart
 
-Generate a hash
+Generate a hash:
 $ tor --hash-password mypassword
 
 Edit torrc file:
@@ -23,13 +23,13 @@ ControlPort 9051
 CookieAuthentication 1
 HashedControlPassword 16:872860B76453A77D60CA2BB8C1A7042072093276A3D701AD684053EC4C
 
-Restart
+Restart:
 $ sudo /etc/init.d/tor restart
 
-Install privoxy router
+Install privoxy router:
 $ sudo apt-get install privoxy
 
-Edit privoxy config
+Edit privoxy config:
 $ sudo nano /etc/privoxy/config
 forward-socks5 / localhost:9050 .
 
