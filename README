@@ -1,6 +1,6 @@
 About:
 ------
-Anonymize the ip on your ip on ubuntu 16.04 with Python3.
+Anonymize and rotate IP on on Ubuntu 16.04 with Python3.
 Uses selienium to drive your browser and confirm your IP has changed.
 Developed on ubuntu 16.04. Uses tor, privoxy, Python 3.?, requests, stem, require.
 
