@@ -1,7 +1,7 @@
 About:
 ------
 Anonymize and rotate IP on on Ubuntu 16.04 with Python3.
-Uses selienium to drive your browser and confirm your IP has changed.
+Uses selenium to drive your browser and confirm your IP has changed.
 Developed by Geoff Clapp. Uses Tor, Privoxy, Python 3.?, requests, stem, require.
 
 Required Bash commands:
