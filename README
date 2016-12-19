@@ -45,7 +45,9 @@ Tor also operates the control channel at 9051.
 Set your browser to forward to 127.0.0.1:8118 for Tor browsing.
 
 Running the application will launch selenium webdriver, and open a browser window to show your ip.
-Inside of the application all network is sent through Tor. Your IP will rotate ten times.
+Inside of the application all network is sent through Tor. Your IP will rotate ten times:
+
+$ sudo python3 setup.py
 
 Links:
 --------------------
