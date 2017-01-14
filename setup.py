@@ -22,7 +22,7 @@ proxy = Proxy({
 driver = webdriver.Firefox(proxy=proxy)
 
 controller = Controller.from_port(port=9051)
-controller.authenticate('itstimetomakemoney')
+controller.authenticate('ifyouarereadingmyauthenticatorpleasetakethetimetocontactme')
 
 proxies = {
     'http': "127.0.0.1:8118"
